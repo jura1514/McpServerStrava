@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StravaMcpServer", "StravaMcpServer\StravaMcpServer.csproj", "{5B07AD99-6ECB-40C5-9E4E-2287B80680D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StravaIntegration", "StravaIntegration\StravaIntegration.csproj", "{1AAE2F0B-4658-4E73-B052-5483DF2EEEBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B07AD99-6ECB-40C5-9E4E-2287B80680D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B07AD99-6ECB-40C5-9E4E-2287B80680D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B07AD99-6ECB-40C5-9E4E-2287B80680D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B07AD99-6ECB-40C5-9E4E-2287B80680D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AAE2F0B-4658-4E73-B052-5483DF2EEEBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AAE2F0B-4658-4E73-B052-5483DF2EEEBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AAE2F0B-4658-4E73-B052-5483DF2EEEBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AAE2F0B-4658-4E73-B052-5483DF2EEEBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
