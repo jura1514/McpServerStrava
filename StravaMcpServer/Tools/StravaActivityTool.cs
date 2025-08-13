@@ -14,16 +14,25 @@ public static class StravaActivityTool
     {
         var accessToken = Environment.GetEnvironmentVariable("STRAVA_ACCESS_TOKEN");
 
-        var activity =
-            await httpClient.GetStringAsync(
-                $"http://localhost:5033/api/strava/activities/1?accessToken={accessToken}&page=1&perPage=1",
+        if (string.IsNullOrEmpty(accessToken))
+            throw new ArgumentNullException(accessToken, "Strava access token is missing");
+
+        var activityResponse =
+            await httpClient.GetAsync(
+                $"http://localhost:5033/api/strava/activities/1?accessToken={accessToken}&page=1&perPage=30",
                 cancellationToken);
+
+        if (!activityResponse.IsSuccessStatusCode)
+            throw new HttpRequestException(
+                $"Failed to fetch activity: {activityResponse.StatusCode} - {await activityResponse.Content.ReadAsStringAsync(cancellationToken)}");
+
+        var activityContent = await activityResponse.Content.ReadAsStringAsync(cancellationToken);
 
         ChatMessage[] messages =
         [
             new(ChatRole.User,
                 "Provide constructive feedback on my last running activity. Tell me where i excel and where I can improve."),
-            new(ChatRole.User, activity)
+            new(ChatRole.User, activityContent)
         ];
 
         ChatOptions options = new()
