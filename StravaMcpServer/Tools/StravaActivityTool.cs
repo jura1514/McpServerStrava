@@ -26,12 +26,6 @@ public static class StravaActivityTool
             await httpClient.GetStringAsync($"/api/strava/activities/1?accessToken={accessToken}&page=1&perPage=30",
                 cancellationToken);
 
-        if (!activityResponse.IsSuccessStatusCode)
-            throw new HttpRequestException(
-                $"Failed to fetch activity: {activityResponse.StatusCode} - {await activityResponse.Content.ReadAsStringAsync(cancellationToken)}");
-
-        var activityContent = await activityResponse.Content.ReadAsStringAsync(cancellationToken);
-
         ChatMessage[] messages =
         [
             new(ChatRole.User,
