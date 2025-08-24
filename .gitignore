@@ -55,3 +55,14 @@ nunit-*.xml
 .idea/.idea.McpServerStrava/.idea/vcs.xml
 .idea/.idea.McpServerStrava/.idea/indexLayout.xml
 .idea/.idea.McpServerStrava/.idea/copilotDiffState.xml
+*.config
+*.db
+*.db-shm
+*.db-wal
+*.v2
+*.vsidx
+*.bin
+.vs/McpServerStrava/v17/DocumentLayout.json
+.vs/McpServerStrava/v17/DocumentLayout.backup.json
+.vs/McpServerStrava/v17/.suo
+.vs/McpServerStrava/copilot-chat/17789c28/sessions/0ca0fa50-9068-409d-a732-66d3fb00c0b6

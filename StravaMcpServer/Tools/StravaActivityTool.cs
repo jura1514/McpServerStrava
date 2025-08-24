@@ -22,9 +22,16 @@ public static class StravaActivityTool
         var accessToken = stravaApiAccessToken ?? stravaConfig.Value.AccessToken;
 
         var httpClient = httpClientFactory.CreateClient("StravaClient");
-        var activity =
-            await httpClient.GetStringAsync($"/api/strava/activities/1?accessToken={accessToken}&page=1&perPage=30",
+        var activityResponse =
+            await httpClient.GetAsync($"/api/strava/activities/1?accessToken={accessToken}&page=1&perPage=30",
                 cancellationToken);
+
+        if (!activityResponse.IsSuccessStatusCode)
+        {
+            return $"Error fetching activity data: {activityResponse.StatusCode}";
+        }
+
+        var activity = await activityResponse.Content.ReadAsStringAsync(cancellationToken);
 
         ChatMessage[] messages =
         [
